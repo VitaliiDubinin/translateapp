@@ -15,14 +15,11 @@ export function Translate() {
 
   const handleTransChange = (event) => {
     event.preventDefault();
-    axios.post("http://localhost:8005/langtransapp/", inputs).then(function (response) {
-      console.log(inputs);
-      console.log(response.data);
-      // navigate("/");
-    });
-    // console.log(value);
-    // setInputs(() => value);
+    axios.post("http://localhost:8005/langtransapp/", inputs).then((res) => console.log(res));
+    // navigate("/");
   };
+  // console.log(value);
+  // setInputs(() => value);
 
   const handleSubmit = (event) => {
     event.preventDefault();

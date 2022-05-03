@@ -1,12 +1,9 @@
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
-import React, { Component } from "react";
 import ListWords from "./components/ListWords";
 import Translate from "./components/Translate";
-import VocabList from "./components/VocabList";
-import axios from "axios";
 import "./App.css";
 
-export function App() {
+function App() {
   return (
     <div className="App">
       {/* <h5>Hello FullStackApp (React + PHP + MySQL)</h5> */}
@@ -18,15 +15,14 @@ export function App() {
             </li>
 
             <li>
-              <Link to="vocab/translate">Translate and add to vocab</Link>
+              <Link to="user/create">Translate and add to vocab</Link>
             </li>
           </ul>
         </nav>
         <Routes>
           <Route index element={<ListWords />} />
-          {/* <Route path="/translateapp" element={<ListWords />} /> */}
-          {/* <Route path="user/create" element={<VocabList data={this.state.data} />} /> */}
-          <Route path="vocab/translate" element={<Translate />} />
+          <Route path="user/create" element={<Translate />} />
+          {/* <Route path="user/create" element={<CreateUser />} /> */}
         </Routes>
       </BrowserRouter>
     </div>

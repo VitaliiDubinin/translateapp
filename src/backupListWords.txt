@@ -1,0 +1,47 @@
+import axios from "axios";
+import { useEffect, useState } from "react";
+import React, { Component } from "react";
+
+export function ListWords() {
+  const [words, setWords] = useState([]);
+  // console.log(words);
+
+  useEffect(() => {
+    getWords();
+  }, []);
+
+  function getWords() {
+    axios.get("http://localhost:8005/langtransapp/").then(function (response) {
+      // console.log("getWords  " + response.data);
+      setWords(response.data);
+    });
+  }
+
+  return (
+    <div>
+      <h1>My current vocab</h1>
+      <table>
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Original word</th>
+            <th>Translated word</th>
+            <th>Learned</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          {/* {words.map((word, key) => (
+            <tr key={key}>
+              <td>{word.id}</td>
+              <td>{word.or_word}</td>
+              <td>{word.tr_word}</td>
+              <td>{word.learned}</td>
+            </tr>
+          ))} */}
+        </tbody>
+      </table>
+    </div>
+  );
+}
+export default ListWords;
