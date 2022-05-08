@@ -1,7 +1,7 @@
 import axios from "axios";
 // import { useEffect, useState } from "react";
 import React, { Component } from "react";
-import VocabList from "./VocabList";
+// import VocabList from "./VocabList";
 
 class ListWords extends Component {
   state = {
